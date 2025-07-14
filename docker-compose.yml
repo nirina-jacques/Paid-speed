@@ -1,0 +1,70 @@
+version: "3.8"
+
+services:
+  app_front:
+    build:
+      context: ./front 
+    ports:
+      - "5173:5173"
+    depends_on:
+      - app_cmd
+    volumes:
+      - ./front:/src/app
+      - /src/app/node_modules/
+    networks:
+      - app-atsia
+  db: 
+    image: mariadb
+    ports:
+      - "3318:3306"
+    #healthcheck:
+    #  test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot"]
+    #  timeout: 2s
+    #  retries: 3
+    environment:
+      - MYSQL_DATABASE=payspeed
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - persistent:/var/lib/mysql
+      - ./docker/db/:/docker-entrypoint-initdb.d/
+    networks:
+      - app-atsia
+        #ipv4_address: 172.10.0.8
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 9003:80
+    restart: always
+    networks:
+      - app-atsia 
+          #ipv4_address: 172.10.0.6
+  app_cmd:
+    container_name: 'app_paid'
+    build:
+      context: ./cmd
+    networks:
+      - app-atsia
+          #ipv4_address: 172.10.0.5
+    ports:
+      - "9191:9191"
+    depends_on:
+      - db
+        #condition: service_healthy
+    volumes:
+      - ./cmd:/usr/app
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSSWORD=root
+      - DB_NAME=payspeed
+networks:
+  app-atsia:
+    #ipam:
+      #config:
+      #  - subnet: 172.10.0.0/16
+
+volumes:
+  persistent:

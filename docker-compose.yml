@@ -22,7 +22,7 @@ services:
     #  timeout: 2s
     #  retries: 3
     environment:
-      - MYSQL_DATABASE=payspeed
+      - MYSQL_DATABASE=ariaryTO
       - MYSQL_ROOT_PASSWORD=root
     volumes:
       - persistent:/var/lib/mysql
@@ -59,7 +59,7 @@ services:
       - DB_HOST=db
       - DB_USER=root
       - DB_PASSSWORD=root
-      - DB_NAME=payspeed
+      - DB_NAME=ariaryTO
 networks:
   app-atsia:
     #ipam:

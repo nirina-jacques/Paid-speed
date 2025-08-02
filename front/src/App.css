@@ -24,17 +24,27 @@ h2{
  h2 a, .link a, h2 a:hover, .link a:hover{
   color: inherit;
 }
+a{
+  color: #fff;
+}
+a:hover{
+  color: #fff;
+}
+.wrapper_cnx_reg{
+  margin-top: 9px !important;
+}
 .wrapper_register{
   width: 50%;
   margin: auto;
+  margin-top: 113px;
 }
-.wrapper_register input {
+.wrapper_register input, .content_body input {
   border-top: none;
   border-right: none;
   border-left: none;
   border-radius: unset;
 }
-.wrapper_register input:focus{
+.wrapper_register input:focus, .content_body input:focus{
   outline: none !important;
   box-shadow:none;
 }
@@ -51,4 +61,56 @@ h2{
   width: 34%;
   margin: 0 auto;
   margin-top: 18px;
+}
+.login_wrapper{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 113px;
+}
+.content-transfert {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid #002c5f;
+    border-radius: 10px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-left: 37px;
+    margin-top: 44px;
+    text-align: center;
+}
+.email-paypal {
+    width: 94%;
+    margin-top: 11px;
+}
+.space_email {
+  margin-right: 11px;
+}
+.wrapper_border{
+  background-color: #002c5f;
+  color: #fff;
+  padding-top: 11px;
+  padding-left: 11px;
+  padding-bottom: 11px;
+}
+.wrap_transfert{
+  margin-top: 11px;
+}
+.footer{
+  background-color: #002c5f;
+  color: #fff;
+}
+.wrap_transfert{
+  height: 625px;
+}
+.identifier_register .register{
+  margin-left: 13px;
+}
+.transaction_btn{
+  width: 30%;
+  border-radius: 21px;
+  padding: 12px;
+}
+.search-content .link-to{
+  margin-left: 12px;
 }

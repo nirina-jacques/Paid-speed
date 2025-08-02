@@ -15,13 +15,13 @@ export default function Footer() {
                     </a>
                 </section>
             </div>
-            <div className="oasis-color">
+            <div className="paid-speed-color">
                 <span className="phone_txt">
                     Tel: +261 38 73 217 67
                 </span>
             </div>
             <div className="text-center p-3 copy_rigth">
-                <a className="oasis-color" href="https://oasisfood.vercel.app/">Oasis Food</a>
+                <a className="paid-speed-color" href="https://oasisfood.vercel.app/">Paid Speed</a>
             </div>
         </footer>
     )

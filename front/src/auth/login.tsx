@@ -4,7 +4,7 @@ export default function Login() {
     return (
         <div className="login_wrapper">
             <div className="demo">
-                <Link to="/">Paid-Speed</Link>
+                <Link to="/">Ariary-To</Link>
             </div>
             <div className="wrapper_fb">
                 <span className="color_wh">
@@ -25,8 +25,8 @@ export default function Login() {
                     <button  className="btn btn-primary">Se connecter</button>
                 </div>
             </div>
-            <div className="text-center register-in-login">
-                Pas encore de compte Paid-speed ?
+            <div className="register-in-login">
+                <div className="text-center">Pas encore de compte Ariary-To ?</div>
                 <Link to="/register">Crée un compte</Link>
             </div>
     </div>

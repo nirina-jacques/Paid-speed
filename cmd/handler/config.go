@@ -58,6 +58,10 @@ func (cf *ServerConfig) Config() {
 }
 func (l *loadModel) GetModels(db *gorm.DB) {
 	db.AutoMigrate(
-		&model.Transfer{},
+		&model.User{},
+		// &model.Currency{},
+		// &model.Transaction{},
+		// &model.ExchangeRate{},
+		// &model.Wallet{},
 	)
 }
